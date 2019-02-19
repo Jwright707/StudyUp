@@ -16,6 +16,11 @@
 	</properties>
 	<build>
 		<plugins>
+	       <plugin>
+	          <groupId>com.github.spotbugs</groupId>
+	          <artifactId>spotbugs-maven-plugin</artifactId>
+	          <version>${project.version}</version>
+	        </plugin>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.8.0</version>
@@ -75,6 +80,11 @@
 		</plugins>
 	</build>
 	<dependencies>
+	    <dependency>
+	      <groupId>com.github.spotbugs</groupId>
+	      <artifactId>spotbugs</artifactId>
+	      <version>${spotbugsVersion}</version>
+	    </dependency>
 		<dependency>
             <groupId>org.junit.platform</groupId>
             <artifactId>junit-platform-surefire-provider</artifactId>
@@ -130,4 +140,16 @@
 			</exclusions>
 		</dependency>
 	</dependencies>
+	<reporting>
+		<plugins>
+		<plugin>
+		 <groupId>com.github.spotbugs</groupId>
+        <artifactId>spotbugs-maven-plugin</artifactId>
+        <version>${project.version}</version>
+        <configuration>
+          <skip>true</skip>
+        </configuration>
+		</plugin>
+      </plugins>
+	</reporting>
 </project>
