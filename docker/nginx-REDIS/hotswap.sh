@@ -10,4 +10,4 @@ else
      sed -i  "s/${IPaddress}":"/${PARAM}":"/" /etc/nginx/nginx.conf
      /usr/sbin/nginx -s reload
      echo Redirected to: $PARAM 
-fi i
+fi 
